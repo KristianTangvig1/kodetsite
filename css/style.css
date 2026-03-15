@@ -1,0 +1,18 @@
+html {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+}
+
+header {
+  height: var(--header-height);
+  background-color: var(--red);
+  color: var(--dark-red);
+}
+
+main {
+  background-color: var(--white);
+}
+
+footer {
+  background-color: var(--red);
+}

@@ -1,0 +1,65 @@
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  margin: 100px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  gap: 4rem;
+}
+nav ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+nav ul li a {
+  display: flex;
+  width: 115px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--dark-red);
+  text-decoration: none;
+}
+
+main {
+  height: 100vh;
+}
+
+footer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+footer .footer-logo {
+  right: 10%;
+  left: 10%;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.produktcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
