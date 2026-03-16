@@ -10,5 +10,8 @@
   --white: #f2f2f2;
   --black: #000000;
 
-  /*  */
+  /* cards */
+  --card-radius: 0.6rem;
+  --card-shadow: 20px 20px 21.2px 0 #a58a72;
+  --card-width: clamp(5vw, 7vw + 1rem, 10rem);
 }
