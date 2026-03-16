@@ -1,33 +1,56 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const produkt = params.get("products.category");
-
-console.log(id);
-
-// document.querySelector(".back_btn").addEventListener("click", goBack);
-// function goBack() {
-//  history.back();
-// }
-
 const productContainer = document.querySelector(".productContainer");
 
-fetch(`https://dummyjson.com/products/${id}`)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log("antal billeder: ", data.images);
-    productContainer.innerHTML = `
-    <figure>
-        <img src="${data.images[0]}" alt="Produktbillede" class="productImage" />
-        ${data.soldout ? "<span class='saleLabel'>Udsolgt!</span>" : ""}
+async function loadProduct() {
+  const data = await fetch(`https://dummyjson.com/products/${id}`).then((r) => r.json());
+
+  const gallery = data.images
+    .slice(1, 3)
+    .map((src) => `<img src="${src}" alt="${data.title}" />`)
+    .join("");
+
+  productContainer.innerHTML = `
+    <div class="product-left">
+      <figure class="main-image">
+        <img src="${data.images[0]}" alt="${data.title}" />
       </figure>
-      <section class="productDetails">
-        <h2 class="productName">Produktnavn</h2>
-        <div>
-          <p class="articleType"><span class="bold">Kategori:</span> ${data.category}</p>
-          <p class="productCategory"><span class="bold">Kategori:</span> ${data.category}</p>
-          <p class="productPrice"><span class="bold">Pris:</span> ${data.price} DKK</p>
-        </div>
-        <button class="buyButton">Køb nu</button>
-      </section>
+      <div class="image-gallery">${gallery}</div>
+    </div>
+    <div class="product-right">
+      <h2 class="productName">${data.title}</h2>
+      <p class="productDescription">${data.description}</p>
+      <div class="product-actions">
+        <button class="add-to-cart-btn">Tilføj til kurv</button>
+        <button class="swap-btn">Swap nu</button>
+      </div>
+      <div class="also-viewing">
+        <p>Andre kigger på</p>
+        <div class="also-viewing-grid" id="also-viewing-grid"></div>
+      </div>
+    </div>
+  `;
+
+  const related = await fetch(`https://dummyjson.com/products/category/${data.category}`).then((r) => r.json());
+
+  const grid = document.getElementById("also-viewing-grid");
+  related.products
+    .filter((p) => p.id !== data.id)
+    .slice(0, 3)
+    .forEach((p) => {
+      grid.innerHTML += `
+        <a href="produkt.html?id=${p.id}">
+          <img src="${p.thumbnail}" alt="${p.title}" />
+        </a>
       `;
-  });
+    });
+}
+
+loadProduct();
+
+const burgerBtn = document.getElementById("burger-btn");
+const navMenu = document.getElementById("nav-menu");
+burgerBtn.addEventListener("click", () => {
+  burgerBtn.classList.toggle("open");
+  navMenu.classList.toggle("open");
+});

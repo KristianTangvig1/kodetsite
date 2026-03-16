@@ -1,0 +1,163 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  align-items: center;
+  align-content: center;
+}
+
+main.flexgrid {
+  justify-items: center;
+}
+
+main h1 {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+}
+
+.produktcards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: clamp(300px, 90%, 1200px);
+  margin: 1rem auto 3rem;
+}
+
+@media (max-width: 900px) {
+  .produktcards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .produktcards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.produkt {
+  background-color: #e6e6e6;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.produktbillede {
+  padding: 1.2rem 1rem;
+}
+
+.produktbillede a {
+  display: block;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  border-radius: 0;
+}
+
+.produktnavn {
+  display: none;
+}
+
+.info {
+  padding: 0.4rem 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.katagori {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.pris {
+  font-size: 0.7rem;
+  color: #666;
+  margin: 0;
+}
+
+span.valuta {
+  color: #666;
+  margin-right: 0.1rem;
+  font-size: 0.7rem;
+}
+
+.knap {
+  display: none;
+}
+
+/* Filter button */
+.filter-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+#filter-toggle {
+  border: 1px solid #111;
+  background: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#filter-toggle:hover {
+  background-color: #e6e6e6;
+}
+
+.filter-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  min-width: 160px;
+}
+
+.filter-dropdown.open {
+  display: block;
+}
+
+.filter-dropdown li button {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+
+.filter-dropdown li:last-child button {
+  border-bottom: none;
+}
+
+.filter-dropdown li button:hover {
+  background-color: #e6e6e6;
+}

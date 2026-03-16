@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/produktListe.css" />
     <script src="js/produktliste.js" type="module"></script>
     <title>Document</title>
   </head>
@@ -71,17 +72,30 @@
         </svg>
       </div>
       <nav>
-        <ul>
+        <button class="burger-btn" id="burger-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="produktliste.html">Accessories</a></li>
+          <li class="has-dropdown">
+            <a href="produktliste.html" class="accessories-btn">Accessories</a>
+            <ul class="dropdown" id="category-dropdown"></ul>
+          </li>
           <li><a href="about.html">About us</a></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="flexgrid">
       <h1>Accessories</h1>
       <div class="filter-btn" id="filter-btn">
-        <button>Filter</button>
+        <button id="filter-toggle">Filter ↓</button>
+        <ul class="filter-dropdown" id="filter-dropdown">
+          <li><button data-sort="asc">Billigst først ↑</button></li>
+          <li><button data-sort="desc">Dyrest først ↓</button></li>
+          <li><button data-sort="none">Standard</button></li>
+        </ul>
       </div>
       <section class="produktcards">
         <!-- <article class="produkt">
@@ -159,5 +173,13 @@
         </svg>
       </div>
     </footer>
+    <script>
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+      burgerBtn.addEventListener("click", () => {
+        burgerBtn.classList.toggle("open");
+        navMenu.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>

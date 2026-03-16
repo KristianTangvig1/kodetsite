@@ -1,0 +1,145 @@
+main.productContainer {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+  background: none;
+}
+
+/* ── Left column ── */
+.product-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-image {
+  margin: 0;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.main-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  display: block;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.image-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ── Right column ── */
+.product-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.productName {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  margin: 0;
+}
+
+.productDescription {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.add-to-cart-btn,
+.swap-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.add-to-cart-btn {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.swap-btn {
+  background-color: var(--red);
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #333;
+}
+
+.swap-btn:hover {
+  background-color: var(--light-red);
+}
+
+/* ── Andre kigger på ── */
+.also-viewing {
+  margin-top: 0.5rem;
+}
+
+.also-viewing p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0 0 0.75rem;
+}
+
+.also-viewing-grid {
+  display: flex;
+  gap: 1rem;
+}
+
+.also-viewing-grid a img {
+  width: 100px;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.also-viewing-grid a:hover img {
+  opacity: 0.75;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  main.productContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 1.5rem auto;
+  }
+}
