@@ -158,11 +158,14 @@ main .cta-images {
 /* INSPO */
 main .inspo {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr ;
   width: clamp(300px, 90%, 900px);
   margin: 0 auto;
   gap: 2rem;
+  width: 30%;
 }
+
+
 
 main #inspo-images {
   display: grid;
