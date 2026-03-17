@@ -105,6 +105,98 @@ main.productContainer {
   background-color: var(--light-red);
 }
 
+/* ── Rental pricing ── */
+.productPrice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.rental-period {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rental-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.rental-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rental-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.rental-btn.active {
+  border-color: #1a1a1a;
+}
+
+/* ── Accordions ── */
+.product-accordions {
+  border-top: 1px solid #d0d0d0;
+  margin-top: 0.5rem;
+}
+
+.accordion {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.accordion-content {
+  display: none;
+  padding-bottom: 1rem;
+}
+
+.accordion.open .accordion-content {
+  display: block;
+}
+
+.accordion-content p {
+  font-size: 0.82rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.accordion-content a {
+  color: #1a1a1a;
+}
+
 /* ── Andre kigger på ── */
 .also-viewing {
   margin-top: 0.5rem;
