@@ -3,7 +3,11 @@ const id = params.get("id");
 const productContainer = document.querySelector(".productContainer");
 
 async function loadProduct() {
+  if (!id) return;
+
   const data = await fetch(`https://dummyjson.com/products/${id}`).then((r) => r.json());
+
+  if (!data.images) return;
 
   const gallery = data.images
     .slice(1, 3)
