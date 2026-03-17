@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/custom.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/produktListe.css">
-    <link rel="stylesheet" href="css/forside.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/produktListe.css" />
+    <link rel="stylesheet" href="css/forside.css" />
     <script src="js/index.js" type="module"></script>
     <title>Document</title>
   </head>
@@ -73,63 +73,67 @@
         </svg>
       </div>
       <nav>
-        <ul>
+        <button class="burger-btn" id="burger-btn" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="produktliste.html">Accessories</a></li>
+          <li class="has-dropdown">
+            <a href="produktliste.html" class="accessories-btn">Accessories</a>
+            <ul class="dropdown" id="category-dropdown"></ul>
+          </li>
           <li><a href="about.html">About us</a></li>
         </ul>
       </nav>
     </header>
-<main class="flexgrid">
+    <main class="flexgrid">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Swap med god samvittighed</h1>
+          <p>Og lej dine accessories her</p>
+        </div>
+        <div class="hero-images" id="hero-images"></div>
+      </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Swap med god samvittighed</h1>
-      <p>Og lej dine accessories her</p>
-    </div>
-    <div class="hero-images" id="hero-images"></div>
-  </section>
+      <!-- SUNGLASSES -->
+      <section class="section">
+        <h2>Find de perfekte solbriller til sommeren</h2>
+        <div class="produktcards" id="sunglasses"></div>
+      </section>
 
-  <!-- SUNGLASSES -->
-  <section class="section">
-    <h2>Find de perfekte solbriller til sommeren</h2>
-    <div class="produktcards" id="sunglasses"></div>
-  </section>
+      <!-- CTA -->
+      <section class="cta">
+        <div>
+          <h3>Lej dine accessories her!</h3>
+          <p>Find de nyeste kollektioner til dit outfit</p>
+          <a href="produktliste.html?categories=womens-jewellery" class="cta-btn"> Se dem her! </a>
+        </div>
+        <div class="cta-images" id="cta-images"></div>
+      </section>
 
-  <!-- CTA -->
-  <section class="cta">
-    <div>
-      <h3>Lej dine accessories her!</h3>
-      <p>Find de nyeste kollektioner til dit outfit</p>
-      <a href="produktliste.html?categories=womens-jewellery" class="cta-btn">
-        Se dem her!
-      </a>
-    </div>
-    <div class="cta-images" id="cta-images"></div>
-  </section>
+      <!-- WATCHES -->
+      <section class="section">
+        <h2>Stort udvalg af luksus ure – samlet ét sted!</h2>
+        <div class="produktcards" id="watches"></div>
+      </section>
 
-  <!-- WATCHES -->
-  <section class="section">
-    <h2>Stort udvalg af luksus ure – samlet ét sted!</h2>
-    <div class="produktcards" id="watches"></div>
-  </section>
+      <!-- INSPO -->
+      <section class="section">
+        <div class="inspo">
+          <div id="inspo-images"></div>
+          <p>Swap and look fabulous!</p>
+        </div>
+      </section>
 
-  <!-- INSPO -->
-  <section class="section">
-    <div class="inspo">
-      <div id="inspo-images"></div>
-      <p>Swap and look fabulous!</p>
-    </div>
-  </section>
-
-  <!-- DREAM -->
-  <section class="section">
-    <h2>...Hvad drømmer du om?</h2>
-    <div class="produktcards" id="dream"></div>
-  </section>
-
-</main>
+      <!-- DREAM -->
+      <section class="section">
+        <h2>...Hvad drømmer du om?</h2>
+        <div class="produktcards" id="dream"></div>
+      </section>
+    </main>
     <footer>
       <div class="footer-logo">
         <svg width="1340" height="400" viewBox="0 0 1340 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,6 +194,19 @@
           </defs>
         </svg>
       </div>
+      <nav class="footer-links">
+        <a href="#">Kontakt</a>
+        <a href="#">Om Os</a>
+        <a href="#">Sociale Medier</a>
+      </nav>
     </footer>
+    <script>
+      const burgerBtn = document.getElementById("burger-btn");
+      const navMenu = document.getElementById("nav-menu");
+      burgerBtn.addEventListener("click", () => {
+        burgerBtn.classList.toggle("open");
+        navMenu.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
