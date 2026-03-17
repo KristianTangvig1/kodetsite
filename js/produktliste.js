@@ -7,14 +7,7 @@ const params = new URLSearchParams(window.location.search);
 const kategori = params.get("categories") || "sunglasses";
 
 // Slugs from dummyjson that match our store's categories
-const storeCategories = [
-  "sunglasses",
-  "mens-watches",
-  "womens-watches",
-  "womens-jewellery",
-  "womens-bags",
-  "mens-bags",
-];
+const storeCategories = ["sunglasses", "mens-watches", "womens-watches", "womens-jewellery", "womens-bags", "mens-bags"];
 
 // Stored products and sort state
 let products = [];
@@ -24,9 +17,7 @@ let sortOrder = null; // null | "asc" | "desc"
 fetch("https://dummyjson.com/products/categories")
   .then((res) => res.json())
   .then((categories) => {
-    const filtered = categories.filter((cat) =>
-      storeCategories.includes(cat.slug)
-    );
+    const filtered = categories.filter((cat) => storeCategories.includes(cat.slug));
     filtered.forEach((cat) => {
       categoryDropdown.innerHTML += `<li><a href="produktliste.html?categories=${cat.slug}">${cat.name}</a></li>`;
     });
@@ -54,7 +45,6 @@ function renderProducts(list) {
         <h2 class="produktnavn">${produkter.title}</h2>
         <div class="info">
           <p class="katagori">${produkter.brand ?? ""}: ${produkter.category}</p>
-          <p class="pris"><span class="valuta">$</span>${produkter.price},-</p>
         </div>
         <a href="produkt.html?id=${produkter.id}" class="knap">Read more</a>
       </article>
