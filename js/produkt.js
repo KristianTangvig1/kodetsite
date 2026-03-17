@@ -10,8 +10,8 @@ async function loadProduct() {
     .map((src) => `<img src="${src}" alt="${data.title}" />`)
     .join("");
 
-  const price2Days = (Math.round(data.price * 6)).toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  const price7Days = (Math.round(data.price * 14)).toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const price2Days = Math.round(data.price * 6).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const price7Days = Math.round(data.price * 14).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   productContainer.innerHTML = `
     <div class="product-left">
@@ -77,26 +77,26 @@ async function loadProduct() {
   `;
 
   // Rental period toggle
-  document.querySelectorAll('.rental-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.rental-btn').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById('product-price').textContent = btn.dataset.price + ' DKK';
+  document.querySelectorAll(".rental-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".rental-btn").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("product-price").textContent = btn.dataset.price + " DKK";
     });
   });
 
   // Accordion toggle
-  document.querySelectorAll('.accordion-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
+  document.querySelectorAll(".accordion-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
       const accordion = btn.parentElement;
-      const isOpen = accordion.classList.contains('open');
-      document.querySelectorAll('.accordion').forEach((a) => {
-        a.classList.remove('open');
-        a.querySelector('.accordion-icon').textContent = '+';
+      const isOpen = accordion.classList.contains("open");
+      document.querySelectorAll(".accordion").forEach((a) => {
+        a.classList.remove("open");
+        a.querySelector(".accordion-icon").textContent = "+";
       });
       if (!isOpen) {
-        accordion.classList.add('open');
-        btn.querySelector('.accordion-icon').textContent = '−';
+        accordion.classList.add("open");
+        btn.querySelector(".accordion-icon").textContent = "−";
       }
     });
   });
