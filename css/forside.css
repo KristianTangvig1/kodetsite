@@ -1,0 +1,134 @@
+/* HERO */
+main .hero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  width: clamp(300px, 90%, 1200px);
+  margin: 3rem auto;
+  gap: 3rem;
+}
+
+main .hero-text h1 {
+  font-size: 3rem;
+  color: var(--red);
+  text-transform: uppercase;
+}
+
+main .hero-images {
+  position: relative;
+  height: 320px;
+}
+
+main .hero-images img {
+  position: absolute;
+  width: 45%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+main .hero-images img:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+main .hero-images img:nth-child(2) {
+  top: 10%;
+  left: 45%;
+}
+
+main .hero-images img:nth-child(3) {
+  bottom: 0;
+  left: 20%;
+}
+
+/* SECTION */
+main .section {
+  width: clamp(300px, 90%, 1200px);
+  margin: 2rem auto;
+}
+
+main .section h2 {
+  text-align: center;
+  color: var(--red);
+}
+
+/* ENS BILLEDESTIL */
+main .produktbillede,
+main .cta-images a,
+main #inspo-images a {
+  background: #e6e6e6;
+  padding: 1rem;
+  border-radius: 8px;
+  display: block;
+}
+
+/* CTA */
+main .cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: clamp(300px, 90%, 1200px);
+  margin: 3rem auto;
+  gap: 2rem;
+}
+
+main .cta-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid #111;
+  background: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: #111;
+}
+
+.cta-btn:hover {
+  background: #111;
+  color: white;
+}
+
+/* INSPO */
+main .inspo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: clamp(300px, 90%, 900px);
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+main #inspo-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  main .hero,
+  main .cta,
+  main .inspo {
+    grid-template-columns: 1fr;
+  }
+
+  main .hero-images {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    gap: 1rem;
+  }
+
+  main .hero-images img {
+    position: static;
+    width: 100%;
+  }
+}
