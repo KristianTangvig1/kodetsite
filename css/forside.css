@@ -174,6 +174,22 @@ main .inspo {
   margin: 0 auto;
   gap: 2rem;
   width: 30%;
+} */
+
+main .inspo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 4rem;
+  width: min(90%, 900px);
+  margin: 0 auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+main .inspo img {
+  width: 100%;
+  display: block;
 }
 
 main .inspo p {
@@ -217,4 +233,20 @@ main #inspo-images {
     grid-template-rows: auto;
     border-radius: 0.6rem;
   }
-}
+
+
+    main .inspo {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 90%;
+    }
+  
+    main .inspo p {
+      grid-column: 1;
+      grid-row: auto;
+      text-align: center;
+      font-size: 2rem;
+      max-width: none;
+    }
+  }
+
