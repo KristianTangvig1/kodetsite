@@ -72,8 +72,38 @@ img {
 .info {
   padding: 0.4rem 0.8rem 0.9rem;
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.info-text {
+  display: flex;
   flex-direction: column;
   gap: 0.1rem;
+}
+
+.cart-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cart-btn:hover svg rect {
+  fill: #e04535;
+}
+
+.cart-btn:active svg rect {
+  fill: #6b1a13;
+}
+
+.cart-btn svg {
+  display: block;
+  width: 54px;
+  height: auto;
 }
 
 .katagori {

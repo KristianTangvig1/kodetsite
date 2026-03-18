@@ -49,6 +49,9 @@ main .hero-images {
 }
 
 main .hero-images img {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
   position: absolute;
   object-fit: cover;
   border-radius: 1rem;
@@ -156,16 +159,27 @@ main .cta-images {
 }
 
 /* INSPO */
+main .section:has(.inspo) {
+  width: 100%;
+  padding: 3rem 0;
+  background-image: url("../img/SwapsoryRed.svg");
+  background-repeat: repeat;
+  background-size: 300px auto;
+}
+
 main .inspo {
   display: grid;
-  grid-template-columns: 1fr ;
+  grid-template-columns: 1fr;
   width: clamp(300px, 90%, 900px);
   margin: 0 auto;
   gap: 2rem;
   width: 30%;
 }
 
-
+main .inspo p {
+  color: var(--dark-red);
+  font-weight: 800;
+}
 
 main #inspo-images {
   display: grid;
@@ -198,6 +212,9 @@ main #inspo-images {
   }
 
   main .hero-images img {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     border-radius: 0.6rem;
   }
 }
