@@ -84,8 +84,13 @@ function renderProducts(list, container) {
           </a>
         </div>
         <div class="info">
-          <p class="katagori">${produkt.brand ?? ""}: ${produkt.category}</p>
-          <p class="pris"><span class="valuta">$</span>${produkt.price},-</p>
+          <div class="info-text">
+            <p class="katagori">${produkt.brand ?? ""}: ${produkt.category}</p>
+            <p class="pris"><span class="valuta">$</span>${produkt.price},-</p>
+          </div>
+          <button class="cart-btn" aria-label="Læg i kurv">
+            <img src="img/kurvknap.svg" alt="Kurv" />
+          </button>
         </div>
       </article>
     `;
